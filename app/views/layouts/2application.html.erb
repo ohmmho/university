@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <title> || university || </title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+  
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+  
+</head>
+<body> 
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
+<!-- navigation bar -->
+  <%= render 'layouts/navbar' %> 
+<!-- end navigation bar -->  
+
+
+
+<!-- body -->
+<div class="container-fluid">
+  <div>
+    <div class="row">
+
+      <%= yield %>
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="afooter text-center">
+  <div class="">
+    
+  </div>
+</div> -->
+
+<!-- body's end
+
+
+</body>
+</html>
+
+
+

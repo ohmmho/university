@@ -3,17 +3,31 @@
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
-
- *= require_self
- *= require_tree .
+ *
+ * BEGIN VENDOR CSS FOR WEBARCH
+ *= require plugins/pace/pace-theme-flash
+ *= require plugins/jquery-scrollbar/jquery.scrollbar
+ *= require plugins/boostrapv3/css/bootstrap.min
+ *= require plugins/font-awesome/css/font-awesome
+ *= require css/animate.min
+ *
+ * BEGIN CORE TEMPLATE CSS FOR WEBARCH
+ *= require css/style
+ *= require css/responsive
+ *= require css/responsive
+ *= require css/custom-icon-set
+ *= require buttons.scss
+ *= require site.css.scss
+ *= require university.css
+ *
+ * BEGIN WEBARCH ASSET PIPELINE OVERRIDE
+ *= require ./assets-pipeline
+ * I prefer to list stylesheets in a specific order, so I comment out require_tree .
+ **** require_tree .
  */
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
-

@@ -20,6 +20,7 @@
         <li class="link-rss title-spaced text-center" role="presentation" data-type="c"><a role="menuitem" tabindex="-1" href="#">MARKETING DIRECTO</a></li> 
         <li class="link-rss title-spaced text-center" role="presentation" data-type="d"><a role="menuitem" tabindex="-1" href="#">DESARROLLO WEB</a></li>
         <li class="link-rss title-spaced text-center" role="presentation" data-type="e"><a role="menuitem" tabindex="-1" href="#">SMASHING MAGAZINE</a></li>
+        <li class="link-rss title-spaced text-center" role="presentation" data-type="f"><a role="menuitem" tabindex="-1" href="#">PRODUCT HUNT</a></li>
 
       </ul>
     </div>
@@ -76,6 +77,18 @@
       <% @smashings.each do |smashing| %>
         <li >
           <%= link_to( smashing.title, leaving_path(smashing.id), :target => "_blank") %>
+        </li>
+      <hr>
+      <% end %>
+      </ul>
+    </div>
+
+    <div id="f" class="link-rss-div">
+      <ul class="list-unstyled">
+      <br>
+      <% @producthunts.each do |product| %>
+        <li >
+          <%= link_to( product.title, leaving_path(product.id), :target => "_blank") %>
         </li>
       <hr>
       <% end %>

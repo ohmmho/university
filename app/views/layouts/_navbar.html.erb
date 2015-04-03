@@ -4,8 +4,17 @@
     <div class="container-fluid">
       
         <a class="navbar-brand" href="/">
-        <%= image_tag("cabecera.png", class: "menu_icon") %>
+      <%= image_tag("cabecera.png", class: "menu_icon") %>
         </a>
+        <% if current_user %>
+        <ul class="nav nav-pills nav-justified categorias">
+          <li href="#" class="title-spaced"><a href="/diseño">DISEÑO</a></li>
+          <li><a href="#" class="title-spaced">MARKETING</a></li>
+          <li><a href="#" class="title-spaced">PUBLICIDAD</a></li>
+          <li><a href="#" class="title-spaced">DESARROLLO</a></li>
+        </ul>
+      <% end -%> 
+
         <ul class="nav navbar-nav navbar-right text-center user ">
           <li class="dropdown">
             <% if current_user %>

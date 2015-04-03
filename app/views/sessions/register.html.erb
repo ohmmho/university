@@ -1,72 +1,66 @@
 
+<!-- BEGIN BODY -->
+<body class="error-body no-top lazy"  data-original="assets/work.jpg"  style="background-image: url('assets/work.jpg')"> 
+<div class="container">
+  <div class="row login-container animated fadeInUp">  
+        <div class="col-md-7 col-md-offset-2 tiles white no-padding">
+		 <div class="p-t-30 p-l-40 p-b-20 xs-p-t-10 xs-p-l-10 xs-p-b-10"> 
+          <h2 class="normal">Sign in to webarch</h2>
+          <p>Use Facebook, Twitter or your email to sign in.<br></p>
+          <p class="p-b-20">Sign up Now! for webarch accounts, it's free and always will be..</p>
+		  <button type="button" class="btn btn-primary btn-cons" id="login_toggle">Login</button> or&nbsp;&nbsp;
+      <button type="button" class="btn btn-info btn-cons" id="register_toggle"> Create an account</button>
+        </div>
+		<div class="tiles grey p-t-20 p-b-20 text-black">
+			<div id="frm_login" class="animated fadeIn">
+          <div class="row form-row m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">    
+             <%= form_tag login_path do %>
+               <span class="input input--hoshi">
+                 <%= text_field_tag :email, nil, class: "input__field input__field--hoshi" %> 
 
-<div  id="particles">
-  <!-- <div class="row"> -->
-    <!-- <div class="col-md-6 col-md-offset-3 text-center"> -->
-      <div class="text-center" id="register">
-        <h4 class="modal-title">Register to see all our awesome stuff</h4>            
-        <%= form_for :user, url: register_path do |f| %>
-          <span class="input input--hoshi">
-            <%= f.text_field :email, class: "input__field input__field--hoshi" %>      
-            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="user_email">
-              <span class="input__label-content input__label-content--hoshi">Email</span>
-            </label>
-          </span>
-          <span class="input input--hoshi">
-            <%= f.password_field :password, class: "input__field input__field--hoshi" %>      
-            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="user_password">
-              <span class="input__label-content input__label-content--hoshi">Password</span>
-            </label>
-          </span>
-          <span class="input input--hoshi">
-            <%= f.password_field :password_confirmation, class: "input__field input__field--hoshi" %>      
-            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="user_password_confirmation">
-              <span class="input__label-content input__label-content--hoshi">Password Confirmation</span>
-            </label>
-          </span>         
-          <%= f.submit "Registrate", class: "btn btn-bai center-block title-spaced" %>
-        <% end %>
-      </div>
-    <!-- </div> -->
-  <!-- </div> -->
+                 <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="user_email">
+                   <span class="input__label-content input__label-content--hoshi">Email</span>
+                 </label>
+               </span>
+               <span class="input input--hoshi">
+                 <%= password_field_tag :password, nil, class: "input__field input__field--hoshi" %>      
+                 <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="user_password">
+                   <span class="input__label-content input__label-content--hoshi">Password</span>
+                 </label>
+               </span>
+              <%= submit_tag "Login", class: "btn btn-bai center-block title-spaced" %> 
+             <% end %>
+          </div>     
+			</div>
+			<div id="frm_register" class="animated fadeIn" style="display:none">
+        <div class="row form-row m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">
+            <%= form_for :user, url: register_path do |f| %>
+              <span class="input input--hoshi">
+                <%= f.text_field :email, class: "input__field input__field--hoshi" %>      
+                <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="user_email">
+                  <span class="input__label-content input__label-content--hoshi">Email</span>
+                </label>
+              </span>
+              <span class="input input--hoshi">
+                <%= f.password_field :password, class: "input__field input__field--hoshi" %>      
+                <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="user_password">
+                  <span class="input__label-content input__label-content--hoshi">Password</span>
+                </label>
+              </span>
+              <span class="input input--hoshi">
+                <%= f.password_field :password_confirmation, class: "input__field input__field--hoshi" %>      
+                <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="user_password_confirmation">
+                  <span class="input__label-content input__label-content--hoshi">Password Confirmation</span>
+                </label>
+              </span>         
+              <%= f.submit "Registrate", class: "btn btn-bai center-block title-spaced" %>
+            <% end %>   				
+			</div>
+		</div>   
+  </div>   
+  </div>
 </div>
 
+<!-- END CONTAINER -->
+</body>
 
-<!-- LoginModal -->
-
-<div class="modal" id="my_modal">
-  <div class="modal-dialog">
-    <div class="modal-content text-center">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Yay! Log in again all the times you want!</h4>
-      </div>
-      <div class="modal-body">
-        <%= form_tag login_path do %>
-          <span class="input input--hoshi">
-            <%= text_field_tag :email, nil, class: "input__field input__field--hoshi" %> 
-
-            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="user_email">
-              <span class="input__label-content input__label-content--hoshi">Email</span>
-            </label>
-          </span>
-          <span class="input input--hoshi">
-            <%= password_field_tag :password, nil, class: "input__field input__field--hoshi" %>      
-            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="user_password">
-              <span class="input__label-content input__label-content--hoshi">Password</span>
-            </label>
-          </span>
-              <%= submit_tag "Login", class: "btn btn-bai center-block title-spaced" %>
-        <% end %>
-      </div>
-    </div><!--modal-content -->
-  </div><!--modal-dialog  -->
-</div><!--modal --> 
-<!-- end LoginModal --> 
-
-
-
-
-
-
-  

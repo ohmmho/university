@@ -4,30 +4,31 @@
 
 
 
-// modal login & register
-var login_ready = function() {
-  $("#my_modal").hide();
-  $("#login").on("click", function(event) {
-    event.preventDefault();
-    $("#my_modal").show();
-  });
+// login & register form
 
-  $(".close").on("click", function(event) {
-    $("#my_modal").hide();
+var login = function () {
+  $('#login_toggle').click(function(){
+        console.log("working1");
+    $('#frm_login').show();
+    $('#frm_register').hide();
+      $(".lazy").lazyload({
+          effect : "fadeIn"
+       });
   });
 };
 
-var register_ready = function() {
-    $("#my_modal_reg").hide();
-    $("#register").on("click", function(event) {
-      event.preventDefault();
-      $("#my_modal_reg").show();
-    });
+var register = function () {
+  $('#register_toggle').click(function(){
+        console.log("working2");
+    $('#frm_login').hide();
+    $('#frm_register').show();
+      $(".lazy").lazyload({
+          effect : "fadeIn"
+       });
+  })
+}
 
-    $(".close").on("click", function(event) {
-      $("#my_modal_reg").hide();
-    });
-};
+
 
 // button menu dropdown 
 var nav_bar_ready = function () {
@@ -104,6 +105,7 @@ var show_rss_links = function() {
         case "c": $("#c").show(); break;
         case "d": $("#d").show(); break;
         case "e": $("#e").show(); break;
+        case "f": $("#f").show(); break;
       };
    });
 };  
@@ -136,7 +138,8 @@ $('#particles').particleground({
 
 var site_ready = function() {
   
-  login_ready();
+  login();
+  register();
   nav_bar_ready();
   dropdown_ready2();
   dropdown_ready();

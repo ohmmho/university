@@ -7,6 +7,7 @@ class LinksController < ApplicationController
     @mktdirectos = Link.where(brand:"marketingdirecto").order("created_at desc")
     @desarrollowebs = Link.where(brand: "desarrolloweb").order("created_at desc")
     @smashings = Link.where(brand: "smashingmagazine").order("created_at desc")
+    @producthunts = Link.where(brand: "producthunt").order("created_at desc")
 
     #img_rss
     @dribles = Link.where(brand: "drible").order("created_at desc")

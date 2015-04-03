@@ -6,10 +6,11 @@ namespace :link_rss do
   task get_link_db: :environment do
 
     Link.get_links('http://www.tagoartwork.com/feed/', "tago")
-    # Link.get_links('http://www.brandemia.org/feed/', "brandemia")
+    Link.get_links('http://www.brandemia.org/feed/', "brandemia")
     Link.get_links('http://www.marketingdirecto.com/feed/', "marketingdirecto")
     Link.get_links('http://feeds.feedburner.com/desarrolloweb/novedades-articulos', "desarrolloweb")
     Link.get_links('http://www.smashingmagazine.com/feed/', "smashingmagazine")
+    Link.get_links('http://www.producthunt.com/feed', "producthunt")
 
    
     # brandemia
@@ -24,6 +25,13 @@ namespace :link_rss do
         Link.create(title: brandemia.first, url: brandemia.last, brand: "brandemia")
       end   
 
+
+    # product hunt
+
+      @doc = Nokogiri::XML(open('http://www.producthunt.com/feed'))
+
+      @producthunts_i = @doc.xpath('//entry')
+      @producthunts_title = @producthunts_i.xpath('//entry//title')
 
     # dribbble
 

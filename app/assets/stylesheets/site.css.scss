@@ -9,6 +9,13 @@ body {
   padding-left: 30px;
   
 }
+
+.nodisplay {
+  display:none;
+}
+.header-separation {
+  color: #0cc;
+}
 .navbar, .navbar-default, .navbar-fixed-top, .navi-menu{
   border:none !important;
 }
@@ -116,6 +123,7 @@ a:hover, a:active {
 }
 
 /* navbar */
+
 .navi-menu {
   height: 105px;
   background-color: #fff;
@@ -146,15 +154,22 @@ a:hover, a:active {
 }
 
 .colored, 
-.categorias,
+.categorias{
+
+  color:#000;
+}
 .categorias .active a:hover {
-    background-color: #0CC;
-    border-radius: 0px;
+    
+    border-radius: 25px;
     border: 0px;
     
 }
 
+.nav-pills {
 
+    margin-right: 30px;
+  width: 100px;
+}
 
 .categorias a, {
   color: #FFF;
