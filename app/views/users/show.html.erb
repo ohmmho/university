@@ -3,7 +3,7 @@
   <div class="padding-row">
     <h5 class="text-center">Estos son <span class="bai-span"> todos </span> los links que has visitado, <%= @user.email %></h5>
     <hr class="black-line">
-    <ul class="list-unstyled">
+    <ul class="list-unstyled favi">
       <% @datehash.each do |date, array_links| %>
         <ul class="date list-unstyled text-right listlinks"> <span class="label label-default bailabel"><%= date %></span> </ul>
         <hr>

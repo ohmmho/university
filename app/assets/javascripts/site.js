@@ -134,6 +134,25 @@ $('#particles').particleground({
 });
 };
 
+//show favicon in category's link
+var url = $(this).attr("href")+ "/favicon.ico' />";
+var favicon = function() {
+    $(".favi a").each(function() {
+      console.log("funciono");
+      var http = new XMLHttpRequest();
+      http.open('HEAD', url, true);
+      http.send();
+      if (http.status === 404)
+        $(this).parent().prepend("<img width='16px' height='16px' src='assets/widget-arrow-orange.png' />");
+      else 
+        $(this).parent().prepend("<img width='16px' height='16px' src='" + $(this).attr("href") + "/favicon.ico' />");
+    });
+};
+var replaceImg = function() {
+
+$('.favi img').preload({ placeholder:'placeholder.jpg', notFound:'assets/no-sign-50.png' }); 
+};
+
 
 
 var site_ready = function() {
@@ -146,14 +165,15 @@ var site_ready = function() {
   show_rss_img();
   show_rss_links();
   change_name_rss();
-  change_name_linkrss
-  particles();
+  change_name_linkrss();
+  favicon();
+  replaceImg();
 };
 
 
 
 $(document).ready(site_ready);
-$(document).on("page:load", ready);
+$(document).on("page:load", site_ready);
 
 // first step: listener al click de links
 // second step: get the value of the li

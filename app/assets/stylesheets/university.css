@@ -403,4 +403,8 @@ input[type="password"]:focus{
   color: rgba(156, 162, 174, 1);
   letter-spacing: -0.21px;
 }
+
+.favi img {
+  margin-right:5px;
+
 }

@@ -12,9 +12,6 @@ class CategoriesController < ApplicationController
   def desarrollo
   end
 
-  def get_favicon(url)
-    
-
-  end
+ 
   
 end
