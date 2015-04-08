@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/marketing', to: 'categories#marketing'
   get '/publicidad', to: 'categories#publicidad'
   get '/desarrollo', to: 'categories#desarrollo'
+  get '/startup', to: 'categories#startup'
 
 
   resources :users

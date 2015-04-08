@@ -12,6 +12,8 @@ class CategoriesController < ApplicationController
   def desarrollo
   end
 
+  def startup
+  end
  
   
 end

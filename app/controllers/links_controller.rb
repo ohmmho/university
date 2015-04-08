@@ -9,6 +9,8 @@ class LinksController < ApplicationController
     @smashings = Link.where(brand: "smashingmagazine").order("created_at desc")
     @producthunts = Link.where(brand: "producthunt").order("created_at desc")
 
+ 
+
     #img_rss
     @dribles = Link.where(brand: "drible").order("created_at desc")
     @founds = Link.where(brand: "found").order("created_at desc")

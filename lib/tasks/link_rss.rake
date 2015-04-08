@@ -10,7 +10,7 @@ namespace :link_rss do
     Link.get_links('http://www.marketingdirecto.com/feed/', "marketingdirecto")
     Link.get_links('http://feeds.feedburner.com/desarrolloweb/novedades-articulos', "desarrolloweb")
     Link.get_links('http://www.smashingmagazine.com/feed/', "smashingmagazine")
-    Link.get_links('http://www.producthunt.com/feed', "producthunt")
+    
 
    
     # brandemia
@@ -20,6 +20,7 @@ namespace :link_rss do
       @brandemia_i = @doc.xpath('//item')
       @brandemia_title = @brandemia_i.xpath('//item//title').map{|title|title.inner_text}
       @brandemia_link = @brandemia_i.xpath('//item//link').map{|link| link.inner_text}
+
       brandemia_link_title = @brandemia_title.zip(@brandemia_link)
       brandemia_link_title.each do |brandemia| 
         Link.create(title: brandemia.first, url: brandemia.last, brand: "brandemia")
@@ -28,10 +29,17 @@ namespace :link_rss do
 
     # product hunt
 
-      @doc = Nokogiri::XML(open('http://www.producthunt.com/feed'))
+    # @doc = Nokogiri::HTML(open('http://www.producthunt.com/feed'))
 
-      @producthunts_i = @doc.xpath('//entry')
-      @producthunts_title = @producthunts_i.xpath('//entry//title')
+    # @producthunt_i = @doc.xpath('//entry')
+    # @producthunt_title = @producthunt_i.xpath('//entry//title').map{|title| title.inner_text}
+    # @producthunt_link = @producthunt_i.map{|item| item.xpath('//link').last["href"]}  
+
+    # prodhunt_link_title = @producthunt_title.zip(@producthunt_link)
+
+    # prodhunt_link_title.each do |prodhunt|
+    #   Link.create(title: prodhunt.first, url: prodhunt.last, brand: "producthunt")
+    # end
 
     # dribbble
 
@@ -39,7 +47,7 @@ namespace :link_rss do
     @drible_i = @doc.xpath('//item') 
     @drible_title =  @drible_i.xpath('//item//title').map{|title| title.inner_text}
     @drible_link = @drible_i.xpath('//item//link').map{|link| link.inner_text}
-    @drible_img = @drible_i.map{|item| Nokogiri::HTML(item.children[3].children[1].content).xpath("//img").first["src"]}
+    @drible_img = @drible_i.map{|item| Nokogiri::HTML((item.children[3].children[1].content).xpath("//img").first["src"]}
 
 
     drible_link_title_img = @drible_title.zip(@drible_link, @drible_img)
